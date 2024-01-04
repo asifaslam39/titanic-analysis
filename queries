@@ -1,0 +1,24 @@
+--Q.1 count the total passenger 
+select count(passengerid) as total_pass from titanic
+
+--Q.2 count the total passenger gender wise
+select gender,count(gender)as total_pass from titanic group by gender
+--Q.3 how many people survive
+select count(survived) as total_survive from titanic where survived=1
+-- Q.4 how many people not survive
+select count(survived)/as not_survived from titanic where survived=0
+--Q.5 how many male and female are in ship?
+
+select gender,count(gender) from titanic group by gender
+--Q.6 how many male and female  are survive 
+select gender,count(gender) as total_survive from titanic where survived=1 group by gender
+--Q.7 what is the average age of the peoples
+select round(avg(age),2) as avg_age from titanic
+--Q.8 How many classes and count thier passenger in ship
+select pclass,count(pclass) from titanic group by pclass
+--Q.9 how many people survive in diffrent table
+select pclass,count(pclass)as total_survive from titanic where survived=1 group by pclass
+-- Q.10 what is the total Fare of the ship
+select round(sum(fare),2) as total_fare from titanic
+-- q.11 what is teh avg fare
+select round(avg(fare),2) as avg_fare from titanic
